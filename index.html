@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="UniSeg3D">
+  <meta name="keywords" content="Point Cloud Segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UniSeg3D</title>
+  <!-- <link rel="icon" media="(prefers-color-scheme:dark)" href="../../assets/img/Head.png" type="image/png" />
+  <link rel="icon" media="(prefers-color-scheme:light)" href="../../assets/img/Head.png" type="image/png" /> -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+
+</head>
+<body>
+
+<!-- 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a >
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href=" ">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a >
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-navbar">
+          <a class="navbar-item" href="https://lmd0311.github.io" style="color: #9e1f14; font-weight: bold;">
+            More Researches
+          </a >
+        </a >
+        <div class="navbar">
+          <a class="navbar-item" href="https://lmd0311.github.io/projects/PointMamba/"  style="color: #036; font-weight: bold; background-color: #dce3f2;">
+            PointMamba
+          </a >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+
+<script src="../../assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+    backgroundColor: '#fff',
+    innerHTML: 'Back to Top',
+    textColor: '#333'
+  })
+</script>
+<style>
+    #back-to-top {
+      border: 1px solid #ccc;
+      border-radius: 0;
+      font-size: 15px;
+      width: 100px;
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+    }
+</style>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+            <!-- <img src="static/images/logo.png" alt="MY ALT TEXT" style="width: 10%;"/> -->
+          <h1 class="title is-1 publication-title">A Unified Framework for 3D Scene Understanding</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+                Wei Xu</a><sup>*</sup>,</span>
+            <span class="author-block">
+                Chunsheng Shi</a><sup>*</sup>,</span>
+            <span class="author-block">
+                Sifan Tu</a>,</span>
+            <span class="author-block">
+                Xin Zhou</a>,</span>
+            <span class="author-block">
+                Dingkang Liang</a>,</span>
+            <span class="author-block">
+                Xiang Bai</a><sup>†</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Huazhong University of Science & Technology</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup> Equal contribution.</span>
+            <span class="author-block"><sup>†</sup> Corresponding author.</span>
+
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/-"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/dk-liang/UniSeg3D"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              <!-- <span class="link-block">
+                <a href="https://zhuanlan.zhihu.com/p/687191399"
+                       class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">
+                      <i class="fab fa-zhihu"></i>
+                  </span>
+                  <span>Blog (中文)</span>
+                </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic, semantic, instance, interactive, referring, and open-vocabulary semantic segmentation tasks within a single model. Most previous 3D segmentation approaches are specialized for a specific task, thereby limiting their understanding of 3D scenes to a task-specific perspective. In contrast, the proposed method unifies six tasks into unified representations processed by the same Transformer. It facilitates inter-task knowledge sharing and, therefore, promotes comprehensive 3D scene understanding. To take advantage of multi-task unification, we enhance the performance by leveraging task connections. Specifically, we design a knowledge distillation method and a contrastive learning method to transfer task-specific knowledge across different tasks. Benefiting from extensive inter-task knowledge sharing, our UniSeg3D becomes more powerful. Experiments on three benchmarks, including the ScanNet20, ScanRefer, and ScanNet200, demonstrate that the UniSeg3D consistently outperforms current SOTA methods, even those specialized for individual tasks. We hope UniSeg3D can serve as a solid unified baseline and inspire future work.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Overview</h2>
+      <div class="item">
+        <img src="./static/images/introduction.png" alt="MY ALT TEXT"/>
+       </h2>
+     </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Pipeline</h2>
+      <div class="item">
+        <img src="static/images/pipeline.png" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/pretrain.png" alt="MY ALT TEXT"/> -->
+       </h2>
+     </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="item">
+        <h3 class="title is-4">Comparision</h3>
+        <div class="content has-text-justified">
+          <p>
+          </p>
+        </div>
+        <div class="column is-center has-text-centered">
+            <img src="./static/images/comparison.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+        </div>
+        <h3 class="title is-4">Ablation</h3>
+        <div class="content has-text-justified">
+          <p>
+          </p>
+        </div>
+        <div class="column is-center has-text-centered">
+            <img src="./static/images/ablation.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+        </div>
+  </div>
+</section>
+
+      
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Qualitative Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+          </p>
+        </div>
+        <div class="column is-center has-text-centered">
+            <img src="./static/images/visualization.png"
+                 class="interpolation-image"
+                 alt="MVTec-AD and VisA dataset."/>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+    @article{UniSeg3D,
+        title={A Unified Framework for 3D Scene Understanding}, 
+        author={Wei Xu and Chunsheng Shi and Sifan Tu and Xin Zhou and Dingkang Liang and Xiang Bai},
+        journal={arXiv preprint arXiv:***},
+        year={2024}
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <small><p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p></small>
+          <small><p>
+            We sincerely appreciate Nerfies authors <a href="https://github.com/nerfies/nerfies.github.io"> for their awesome templates.
+          </p></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+<div style="background-color: white; margin-right: auto; margin-left: auto; text-align: center; padding-top: 35px; padding-bottom: 35px; position: absolute; left: 0; right: 0;">
+  <a href="https://www.freecounterstat.com" title="hit counter for website">
+    <img src="https://counter4.optistats.ovh/private/freecounterstat.php?c=e4bc9qb2x56s4m7fpa3m6ah1x7qspfze" border="0" title="hit counter for website" alt="hit counter for website"></a>    
+  <p>Visitor Count</p>
+</div>
+</html>
