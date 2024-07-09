@@ -1,2 +1,2 @@
-./static/images/InstanceSegVisual.gif filter=lfs diff=lfs merge=lfs -text
-./static/images/MultiSegVisual.gif filter=lfs diff=lfs merge=lfs -text
+# ./static/images/InstanceSegVisual.gif filter=lfs diff=lfs merge=lfs -text
+# ./static/images/MultiSegVisual.gif filter=lfs diff=lfs merge=lfs -text
