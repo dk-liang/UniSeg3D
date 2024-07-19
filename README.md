@@ -103,13 +103,13 @@ We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic,
   python tools/create_data.py scannet --root-path ./data/scannet --out-dir ./data/scannet --extra-tag scannet
   ```
 
-- Download the processed data infos `uniseg3d_infos_val.pkl` from [link](https://github.com/chunshengshi/UniSeg3D/releases/download/v1.0/uniseg3d_infos_val.pkl), and put it into `data/scannet`.<br>
+- Download the processed data infos `uniseg3d_infos_val.pkl` from [link](https://github.com/dk-liang/UniSeg3D/releases/download/v1.0/uniseg3d_infos_val.pkl), and put it into `data/scannet`.<br>
   Note: The `uniseg3d_infos_val.pkl` contains:
   - ScanNet dataset information.
   - Text prompts extracted from the ScanRefer dataset.
   - Tokenized text prompts using the [OpenCLIP](https://github.com/lxtGH/OMG-Seg/tree/main/ext/open_clip).
 
-- Download processed class embeddings `scannet_cls_embedding.pth` from [link](https://github.com/chunshengshi/UniSeg3D/releases/download/v1.0/scannet_cls_embedding.pth), and put it into `data/scannet`.
+- Download processed class embeddings `scannet_cls_embedding.pth` from [link](https://github.com/dk-liang/UniSeg3D/releases/download/v1.0/scannet_cls_embedding.pth), and put it into `data/scannet`.
   Note: The `scannet_cls_embedding.pth` contains:
   - Processed ScanNet class embeddings using the [OpenCLIP](https://github.com/lxtGH/OMG-Seg/tree/main/ext/open_clip).
 
@@ -141,7 +141,7 @@ UniSeg3D
 
 - Download pretrained CLIP model `open_clip_pytorch_model.bin` from [OpenCLIP](https://huggingface.co/laion/CLIP-convnext_large_d_320.laion2B-s29B-b131K-ft-soup/blob/main/open_clip_pytorch_model.bin), and put it into `work_dirs/pretrained/convnext_large_d_320`.
 
-- Put [checkpoint](https://github.com/chunshengshi/UniSeg3D/releases/download/v1.0/model_best_2.pth) into `work_dirs/ckpts`.
+- Put [checkpoint](https://github.com/dk-liang/UniSeg3D/releases/download/v1.0/model_best_2.pth) into `work_dirs/ckpts`.
 
 - Running the following instruction to evaluate the ckpts:
   ```shell
@@ -190,7 +190,7 @@ UniSeg3D
     <td align="center">54.1</td>
     <td align="center">29.5</td>
     <td align="center">19.6</td>
-    <td align="center"><a href="https://github.com/chunshengshi/UniSeg3D/releases/download/v1.0/model_best.pth">link</a></td>
+    <td align="center"><a href="https://github.com/dk-liang/UniSeg3D/releases/download/v1.0/model_best.pth">link</a></td>
   </tr>
   <tr>
     <td align="center">UniSeg3D<sup>*<sup></td>
@@ -200,7 +200,7 @@ UniSeg3D
     <td align="center">54.5</td>
     <td align="center">29.6</td>
     <td align="center">19.7</td>
-    <td align="center"><a href="https://github.com/chunshengshi/UniSeg3D/releases/download/v1.0/model_best_2.pth">link</a></td>
+    <td align="center"><a href="https://github.com/dk-liang/UniSeg3D/releases/download/v1.0/model_best_2.pth">link</a></td>
   </tr>
 </table>
 
