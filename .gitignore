@@ -5,5 +5,5 @@ __pycache__/
 *$py.class
 *.ipynb
 .dist_test
-data
+# data
 run.sh
