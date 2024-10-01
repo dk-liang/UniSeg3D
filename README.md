@@ -215,10 +215,10 @@ We are thankful to [SPFormer](https://github.com/sunjiahao1999/SPFormer), [OneFo
 
 ## Citation
 ```
-@article{xu2024unified,
-  title={A Unified Framework for 3D Scene Understanding},
-  author={Xu, Wei and Shi, Chunsheng and Tu, Sifan and Zhou, Xin and Liang, Dingkang and Bai, Xiang},
-  journal={arXiv preprint arXiv:2407.03263},
-  year={2024}
+@inproceedings{xu2024unified,
+      title={A Unified Framework for 3D Scene Understanding},
+      author={Xu, Wei and Shi, Chunsheng and Tu, Sifan and Zhou, Xin and Liang, Dingkang and Bai, Xiang},
+      booktitle={Advances in Neural Information Processing Systems},
+      year={2024}
 }
 ```
