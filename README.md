@@ -9,6 +9,7 @@ An officical implementation of "A Unified Framework for 3D Scene Understanding".
 [[Project Page](https://dk-liang.github.io/UniSeg3D/)]  [[Arxiv Paper](https://arxiv.org/abs/2407.03263)]
 
 ## News
+- **Sep-26-24**: UniSeg3D is accepted by NeurIPS2024!
 - **Jul-19-24**: Release the inference code and checkpoints.
 - **Jul-03-24**: Release the [paper](https://arxiv.org/abs/2407.03263).
 
