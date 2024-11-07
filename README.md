@@ -26,7 +26,7 @@ We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic,
 - [x] Release Inference Code.
 - [x] Release Checkpoints.
 - [x] Release Training Code and Training Log.
-- [ ] Release Scripts for Open-Vocabulary Semantic Segmentation.
+- [ ] Release Scripts for Open-Vocabulary Segmentation.
 - [ ] Demo Code.
 
 ## Installation
