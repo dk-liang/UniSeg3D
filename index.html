@@ -34,38 +34,6 @@
 </head>
 <body>
 
-<!-- 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a >
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href=" ">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a >
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-navbar">
-          <a class="navbar-item" href="https://lmd0311.github.io" style="color: #9e1f14; font-weight: bold;">
-            More Researches
-          </a >
-        </a >
-        <div class="navbar">
-          <a class="navbar-item" href="https://lmd0311.github.io/projects/PointMamba/"  style="color: #036; font-weight: bold; background-color: #dce3f2;">
-            PointMamba
-          </a >
-        </div>
-      </div>
-    </div>
-  </div>
-</nav> -->
-
 
 <script src="../../assets/js/vanilla-back-to-top.min.js"></script>
 <script>addBackToTop({
@@ -136,14 +104,6 @@
                   </span>
                   <span>Code</span>
                   </a>
-              <!-- <span class="link-block">
-                <a href="https://zhuanlan.zhihu.com/p/707091096"
-                       class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
-                  <span class="icon">
-                      <i class="fab fa-zhihu"></i>
-                  </span>
-                  <span>Blog (中文)</span>
-                </a> -->
             </div>
           </div>
         </div>
@@ -159,7 +119,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic, semantic, instance, interactive, referring, and open-vocabulary semantic segmentation tasks within a single model. Most previous 3D segmentation approaches are specialized for a specific task, thereby limiting their understanding of 3D scenes to a task-specific perspective. In contrast, the proposed method unifies six tasks into unified representations processed by the same Transformer. It facilitates inter-task knowledge sharing and, therefore, promotes comprehensive 3D scene understanding. To take advantage of multi-task unification, we enhance the performance by leveraging task connections. Specifically, we design a knowledge distillation method and a contrastive learning method to transfer task-specific knowledge across different tasks. Benefiting from extensive inter-task knowledge sharing, our UniSeg3D becomes more powerful. Experiments on three benchmarks, including the ScanNet20, ScanRefer, and ScanNet200, demonstrate that the UniSeg3D consistently outperforms current SOTA methods, even those specialized for individual tasks. We hope UniSeg3D can serve as a solid unified baseline and inspire future work.
+          We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic, semantic, instance, interactive, referring, and open-vocabulary segmentation tasks within a single model. Most previous 3D segmentation approaches are typically tailored to a specific task, limiting their understanding of 3D scenes to a task-specific perspective. In contrast, the proposed method unifies six tasks into unified representations processed by the same Transformer. It facilitates inter-task knowledge sharing, thereby promoting comprehensive 3D scene understanding. To take advantage of multi-task unification, we enhance performance by leveraging inter-task connections. Specifically, we design knowledge distillation and contrastive learning methods to transfer task-specific knowledge across different tasks. Benefiting from extensive inter-task knowledge sharing, our UniSeg3D becomes more powerful. Experiments on three benchmarks, including ScanNet20, ScanRefer, and ScanNet200, demonstrate that the UniSeg3D consistently outperforms current SOTA methods, even those specialized for individual tasks. We hope UniSeg3D can serve as a solid unified baseline and inspire future work.
         </div>
       </div>
     </div>
@@ -272,10 +232,10 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-    @article{xu2024unified,
+    @inproceedings{xu2024unified,
       title={A Unified Framework for 3D Scene Understanding},
       author={Xu, Wei and Shi, Chunsheng and Tu, Sifan and Zhou, Xin and Liang, Dingkang and Bai, Xiang},
-      journal={arXiv preprint arXiv:2407.03263},
+      booktitle={Advances in Neural Information Processing Systems},
       year={2024}
     }
     </code></pre>
