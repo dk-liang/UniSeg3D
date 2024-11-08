@@ -302,9 +302,6 @@ epoch = 512
 param_scheduler = dict(type='PolyLR', begin=0, end=epoch, power=0.9)
 
 custom_hooks = [dict(type='EmptyCacheHook', after_iter=True)]
-default_hooks = dict(
-    checkpoint=dict(interval=1, max_keep_ckpts=3),
-    )
 
 default_hooks = dict(
     checkpoint=dict(interval=8,
