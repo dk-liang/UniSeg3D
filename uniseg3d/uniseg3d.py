@@ -826,6 +826,52 @@ class UniSeg3D(UniSeg3DMixin, Base3DDetector):
         if  self.pred_iou:
             x = self.get_pred_iou(x)
 
+            ##############################################################################################################
+            '''
+            Open-vocabulary inference: Uncomment this entire block to generate class-agnostic masks
+
+
+            Instructions:
+            1. Replace 'your_save_folder_path_here' with your desired output directory
+            2. Adjust iou_threshold and mask_threshold if needed
+            3. Uncomment the entire block below
+            '''
+
+            # import os
+
+            # # Configuration - Modify these values as needed
+            # save_path = 'your_save_folder_path_here'  # TODO: Replace with your save folder path
+            # iou_threshold = 0.6                       # IoU threshold for mask filtering
+            # mask_threshold = 0.4                      # Mask binarization threshold
+
+            # # Create output directory
+            # os.makedirs(save_path, exist_ok=True)
+
+            # # Generate class-agnostic masks
+            # preds_iou_ = x['preds_iou'][0].clone()
+            # pred_masks_ = x['masks'][0].clone()
+            # pred_masks_sigmoid_ = pred_masks_.sigmoid()
+
+            # # Calculate mask scores
+            # mask_score_ = (pred_masks_sigmoid_ * (pred_masks_ > 0)).sum(1) / ((pred_masks_ > 0).sum(1) + 1e-6)
+            # mask_iou_score_ = mask_score_ * preds_iou_.squeeze(-1)
+
+            # # Filter masks by IoU threshold
+            # idx = mask_iou_score_ > iou_threshold
+
+            # # Prepare save path
+            # scene_path = os.path.join(save_path, 
+            #                         batch_data_samples[0].lidar_path.split('/')[-1].replace('bin', 'pth'))
+
+            # # Save results
+            # info = dict()
+            # info['ins'] = (pred_masks_sigmoid_[idx][:, sp_pts_masks] > mask_threshold).cpu().numpy().astype('uint8')
+            # info['conf'] = mask_iou_score_[idx].cpu().numpy()
+            # torch.save(info, scene_path)
+
+            # print(f"Class-agnostic masks saved to: {scene_path}")
+            ##############################################################################################################
+
         results_list = self.predict_by_feat(x, sp_pts_masks)
             
         for i, data_sample in enumerate(batch_data_samples):

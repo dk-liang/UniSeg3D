@@ -26,7 +26,8 @@ We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic,
 - [x] Release Inference Code.
 - [x] Release Checkpoints.
 - [x] Release Training Code and Training Log.
-- [ ] Release Scripts for Open-Vocabulary Segmentation.
+- [x] Support Multi-GPU training.
+- [x] Steps for Open-Vocabulary Segmentation.
 - [ ] Demo Code.
 
 ## Installation
@@ -157,9 +158,15 @@ UniSeg3D
 
 - Running the following instruction to train the UniSeg3D:
   ```shell
+  # Single-GPU
   CUDA_VISIBLE_DEVICES=0 ./tools/dist_train.sh \
   configs/uniseg3d_1xb4_scannet_scanrefer_scannet200_unified.py \
   1
+
+  # Multi-GPU
+  CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh \
+  configs/uniseg3d_4xb4_scannet_scanrefer_scannet200_unified.py \
+  4
   ```
 
 ## Inference
@@ -175,7 +182,20 @@ UniSeg3D
   work_dirs/ckpts/model_best_2.pth \
   1
   ```
-  Note: The PS, SS, IS, Interactive, Referring segmentation tasks are evaluated in once inference. The evaluation scripts for the OVS task will be released later.
+  Note: The PS, SS, IS, Interactive, Referring segmentation tasks are evaluated in once inference.
+
+## Open-Vocabulary Segmentation
+1. **Class-agnostic Mask Generation**
+
+   For inference with Open-Vocabulary Segmentation outputs, use the trained model to generate class-agnostic masks in ScanNet.
+   Specifically, uncomment lines [[L840](https://github.com/dk-liang/UniSeg3D/blob/470854df3afee2e9d0494e3b436ed677eded4b52/uniseg3d/uniseg3d.py#L840)-[L872](https://github.com/dk-liang/UniSeg3D/blob/470854df3afee2e9d0494e3b436ed677eded4b52/uniseg3d/uniseg3d.py#L872)] in `uniseg3d/uniseg3d.py` and modify the `save_path` variable to your desired output directory.
+
+2. **Classification Steps**
+
+   Then use [Open3DIS](https://github.com/VinAIResearch/Open3DIS/blob/main/docs/RUN.md) to assign a classification label to each class-agnostic mask.
+   The Open3DIS pipeline for generating classification labels consists of four steps. In this work, we only use the 1), 2), 5) steps:
+   - Step 1) & 2): Perform mask classification.
+   - Step 5): Metrics evaluation.
 
 ## Models
 
