@@ -26,7 +26,7 @@ We propose UniSeg3D, a unified 3D segmentation framework that achieves panoptic,
 - [x] Release Inference Code.
 - [x] Release Checkpoints.
 - [x] Release Training Code and Training Log.
-- [x] Support Multi-GPU training.
+- [x] Support Multi-GPU Training.
 - [x] Steps for Open-Vocabulary Segmentation.
 - [ ] Demo Code.
 
@@ -188,7 +188,7 @@ UniSeg3D
 1. **Class-agnostic Mask Generation**
 
    For inference with Open-Vocabulary Segmentation outputs, use the trained model to generate class-agnostic masks in ScanNet.
-   Specifically, uncomment lines [[L840](https://github.com/dk-liang/UniSeg3D/blob/470854df3afee2e9d0494e3b436ed677eded4b52/uniseg3d/uniseg3d.py#L840)-[L872](https://github.com/dk-liang/UniSeg3D/blob/470854df3afee2e9d0494e3b436ed677eded4b52/uniseg3d/uniseg3d.py#L872)] in `uniseg3d/uniseg3d.py` and modify the `save_path` variable to your desired output directory.
+   Specifically, uncomment lines [[L840](https://github.com/dk-liang/UniSeg3D/blob/main/uniseg3d/uniseg3d.py#L840)-[L872](https://github.com/dk-liang/UniSeg3D/blob/main/uniseg3d/uniseg3d.py#L872)] in `uniseg3d/uniseg3d.py` and modify the `save_path` variable to your desired output directory.
 
 2. **Classification Steps**
 
